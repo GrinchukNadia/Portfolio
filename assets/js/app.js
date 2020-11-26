@@ -128,3 +128,9 @@ $(".modal_popup").magnificPopup({
       }
   }
 });
+
+
+  $(".header_burger").click( function() {
+    $(".header_burger, .header__navigation").toggleClass("active_burger");
+  });
+
