@@ -1,0 +1,284 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0; }
+
+/* remember to highlight inserts somehow! */
+ins {
+  text-decoration: none; }
+
+del {
+  text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  font-size: 1.6rem;
+  color: #464646;
+  line-height: 1.5; }
+
+header {
+  height: 468px;
+  width: 100%;
+  background-color: #E5CC49;
+  padding-top: 2.5rem;
+  text-transform: uppercase;
+  color: #000000; }
+  header .header__head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem; }
+    header .header__head .head_city p {
+      font-size: 1.4rem; }
+  header .header__navigation ul {
+    display: flex; }
+    header .header__navigation ul li {
+      padding: 0 1.5rem; }
+      header .header__navigation ul li a {
+        text-decoration: none;
+        color: #000000; }
+  header ul li:last-child {
+    padding-right: 0; }
+  header .header__content {
+    text-align: center;
+    padding: 8rem 0; }
+    header .header__content h1, header .header__content p {
+      font-size: 6.4rem;
+      text-transform: uppercase;
+      font-weight: 400; }
+    header .header__content p {
+      font-size: 2.2rem;
+      padding: 1rem 0; }
+  header .content__contact {
+    display: flex;
+    justify-content: center; }
+    header .content__contact a {
+      padding: 2rem 12rem 0 0rem;
+      text-decoration: none;
+      color: #000000; }
+  header .content__contact a:last-child {
+    padding: 2rem 0 0 8rem;
+    text-transform: lowercase; }
+  header .header__footer {
+    display: flex;
+    justify-content: center; }
+    header .header__footer .arrow__down {
+      height: 1.3rem;
+      width: 1.3rem;
+      border-top: 3.5px solid #000000;
+      border-right: 3.5px solid #000000;
+      transform: rotate(136deg);
+      cursor: pointer; }
+
+.container {
+  max-width: 110rem;
+  margin: 0 auto;
+  padding-left: 5rem;
+  padding-right: 5rem; }
+
+.container_header {
+  display: flex;
+  flex-direction: column; }
+
+footer {
+  height: 237px;
+  width: 100%;
+  background-color: #464646; }
+  footer .navigaion__footer ul {
+    color: #ffffff;
+    display: flex;
+    justify-content: center; }
+  footer li {
+    text-transform: uppercase;
+    tab-size: 1.1rem;
+    padding: 1.1rem 1.5rem; }
+    footer li a {
+      text-decoration: none;
+      color: #ffffff; }
+  footer .contacts {
+    text-align: center;
+    color: #ffffff; }
+    footer .contacts h3 {
+      padding: 1rem 0;
+      font-weight: normal;
+      font-size: 2.4rem; }
+    footer .contacts a {
+      text-decoration: none;
+      color: #ffffff;
+      display: block;
+      font-size: 1.4rem;
+      font-weight: lighter; }
+    footer .contacts p {
+      padding-top: 5rem; }
+
+main {
+  min-height: calc(100vh - 468px);
+  position: relative; }
+  main .slick-prev:before, main .slick-next:before {
+    color: #464646; }
+  main .cont {
+    background-color: #EEEEEE;
+    padding: 0 0 2rem 0; }
+  main .aboutMe {
+    background: linear-gradient(90deg, #EEEEEE 51%, white 51%); }
+  main .aboutMe__text {
+    padding: 24px 0px 0px 382px;
+    margin: 88px 0px 0px 0px; }
+  main h2 {
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0.8rem 0 2rem; }
+  main p {
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    color: #464646; }
+  main .main_photo {
+    height: 425px;
+    position: absolute;
+    top: -88.4px; }
+  main .hard-skills .skills__header {
+    text-align: center;
+    margin-top: 12.8rem;
+    margin-bottom: 1.3rem;
+    font-size: 4rem; }
+  main .hard-skills .bckgr {
+    background: linear-gradient(90deg, white 51%, #EEEEEE 51%); }
+  main .hard-skills .skills__main {
+    background-color: #EEEEEE; }
+    main .hard-skills .skills__main h3 {
+      text-transform: uppercase;
+      font-size: 2rem;
+      padding-bottom: 1rem; }
+    main .hard-skills .skills__main p {
+      color: #464646; }
+  main .hard-skills .skills_graph {
+    display: flex; }
+    main .hard-skills .skills_graph .skills_graph-block {
+      margin: 5rem 7rem 5rem 4rem; }
+      main .hard-skills .skills_graph .skills_graph-block .elem {
+        width: 30rem;
+        padding: 0 0 1.3rem 0;
+        margin-bottom: 2.9rem;
+        border-bottom: 3px solid #000000; }
+  main .hard-skills .elem:before {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background-color: #000000;
+    border-radius: 50%; }
+  main .skills__main {
+    padding-left: 10rem;
+    padding-top: 2.9rem; }
+    main .skills__main h3 {
+      text-transform: uppercase;
+      font-size: 2rem;
+      padding-bottom: 1rem; }
+    main .skills__main p {
+      color: #464646; }
+  main .portfolio {
+    height: 54rem;
+    margin: 4.5rem 0;
+    background-color: #EEEEEE; }
+    main .portfolio .portfolio__heading {
+      text-align: center;
+      font-size: 4rem;
+      padding: 4.3rem 0; }
+  main .portfolio__blocks {
+    display: flex;
+    justify-content: center; }
+    main .portfolio__blocks .block {
+      width: 45%;
+      height: 29.6rem;
+      background-color: #A7A7A7; }
+  main .block:first-child {
+    margin-right: 10px; }
+  main .cerificates__header {
+    text-align: center; }
+    main .cerificates__header p {
+      text-align: start;
+      padding-left: 10rem; }
+  main .certificates__carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 5rem; }
+    main .certificates__carousel .carousel {
+      width: 58%;
+      display: flex;
+      height: 11.6rem;
+      align-items: center; }
+      main .certificates__carousel .carousel .left_arrow {
+        cursor: pointer;
+        position: absolute;
+        z-index: 1;
+        left: -24px;
+        width: 8px; }
+      main .certificates__carousel .carousel .right_arrow {
+        cursor: pointer;
+        position: absolute;
+        z-index: 1;
+        right: -24px;
+        width: 8px; }
+      main .certificates__carousel .carousel .carousel__img {
+        width: 100%;
+        margin-right: 1rem;
+        background: #9c9c9c;
+        display: inline-block; }
+        main .certificates__carousel .carousel .carousel__img img {
+          width: 100%;
+          height: 114px;
+          opacity: 0.8; }
+      main .certificates__carousel .carousel img:hover {
+        cursor: pointer;
+        opacity: 1; }
+      main .certificates__carousel .carousel .carousel__img:last-child {
+        margin-right: 0; }
+      main .certificates__carousel .carousel .popup {
+        display: none; }
