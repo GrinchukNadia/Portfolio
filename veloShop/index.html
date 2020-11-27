@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velo Smart</title>
+<!-------------фавикон------------------ -->
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+<!-- -------------стили------------------ -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css">
+<!-- --------------скрипты--------------- -->    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/js/app.js"></script>
+</head>
+<body>
+<!-- -----------вход через facebook------- -->
+    <script>
+     
+        function statusChangeCallback(response) {
+            console.log('statusChangeCallback');
+            console.log(response);
+            if (response.status === 'connected') {
+            testAPI();  
+            }
+        }
+
+
+        function checkLoginState() { 
+            FB.getLoginStatus(function(response) { 
+            statusChangeCallback(response);
+            console.log(response);
+            document.location.reload();
+            });
+        }
+
+
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId      : '355853125648385',
+            cookie     : true, 
+            xfbml      : true, 
+            version    : 'v8.0' 
+            });
+
+
+            FB.getLoginStatus(function(response) { 
+            statusChangeCallback(response);  
+            });
+        };
+ 
+        function testAPI() { 
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+            document.getElementById('singInBtn').style.display = 'none';
+            document.getElementById('logOut').style.display = 'flex';
+            document.getElementById('status').innerHTML =
+                'Hello, ' + response.name + '!';
+            });
+        };
+
+    </script>
+
+    
+     
+    <header>
+        <div class="wrapper wrapper_header">
+            <div class="header_logo">
+                <picture>
+                    <source class="logo" media="(max-width: 672px)" srcset="assets/img/logo_small.png">
+                    <img class="logo" src="assets/img/Nadia-04.png" alt="">
+                </picture>
+            </div>
+            <div id="status"></div>
+            <div id="singInBtn" class="singIn ">
+                <p>Log In</p>
+            </div>
+            <div id="logOut" class="log_out" style="display: none;" onclick="FB.logout(function() {
+                document.location.reload();
+                document.getElementById('singInBtn').style.display = 'flex';
+                document.getElementById('logOut').style.display = 'none';
+            });" > 
+                <p>Log Out</p>
+            </div>
+        </div>
+    </header>
+
+    <div id="carousel">
+        <ul class="carousel_slider" id="first">
+            <li class="slide img1"><img src="assets/img/img_carousel/carousel_00.jpg" alt=""></li>
+            <li class="slide img2"><img src="assets/img/img_carousel/carousel_01.jpg" alt=""></li>
+            <li class="slide img3"><img src="assets/img/img_carousel/carousel_02.jpg" alt=""></li>
+            <li class="slide img4"><img src="assets/img/img_carousel/carousel_03.jpg" alt=""></li>
+            <li class="slide img5"><img src="assets/img/img_carousel/carousel_04.jpg" alt=""></li>
+            <li class="slide img6"><img src="assets/img/img_carousel/carousel_05.jpg" alt=""></li>
+            <li class="slide img7"><img src="assets/img/img_carousel/carousel_06.jpg" alt=""></li>
+        </ul>
+
+        <div class="control">
+            <button class="arrow left" ></button>
+            <button class="arrow right"></button>
+        
+            <ul class="carousel-selected">
+                <li class="selected"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="wrapper main">
+        <nav class="sidebar">
+            <ul>
+                <li id="active"><a  href="index.html">Home</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li><a href="order.html">Order</a></li>
+            </ul>
+        </nav>
+        <section class="cards"> 
+
+            <div class="card_big"><a href="#">
+                <div class="top_block">
+                    <div class="card_sale">
+                        <p>72%</p><p>off</p>
+                    </div>
+
+                    <div class="card_big-pic">
+                        <img src="assets/img/01.jpg" alt="">
+                    </div>
+                </div> 
+                <div class="price_line">
+                    <div class="price_block">
+                        <div class="card_price">
+                            <p>$49.99</p>
+                        </div>
+                        <div class="card_old-price"><span class="cross_line">
+                            <p>$69.99</p>
+                        </span></div>
+                    </div>
+                    
+                    <div class="copany">    
+                        <div class="card_company-name">
+                            <p>Amazon</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card_description">
+                    <p><span>Bike Apollo</span> Neo 20" boys black  with extra power Gift Basket My Chu...</p>
+                </div>
+
+                <div class="bottom_block">
+        
+                    <div class="card_free">
+                        <p>Free Shipping</p>
+                    </div>
+
+                    <div class="card_new">
+                        <p>New</p>
+                    </div>
+
+                    <div id="card_time">
+                        <time>23 days</time><br>
+                        <time>00:02:29</time>
+                    </div>
+                </div>
+            </a></div>
+
+
+            
+            <div class="card_small"><a href="#">
+
+
+                <div class="small-top">
+
+                    <div class="prise-descrip">
+
+                        <div class="small_sale">
+                            <p>70%</p><p>off</p>
+                        </div>
+
+                        <div class="card_description">
+                            <p><span>Bike Pride</span> RoCX 28" blue/black ppreciation 8.2 Gift Basket Chu...</p>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="card_pic">
+                        <img src="assets/img/02.jpg" alt="">
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="small-midle">
+
+
+                    <div class="price_block">
+                        <div class="card_price">
+                            <p>$49.99</p>
+                        </div>
+                        <div class="card_old-price"><span class="cross_line">
+                            <p>$69.99</p>
+                        </span></div>
+                    </div>
+                    
+                    <div class="copany">    
+                        <div class="card_company-name">
+                            <p>Amazon</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </a></div>
+
+
+
+            <div class="card_small"><a href="#">
+                <div class="small-top">
+                    <div class="prise-descrip">
+
+                        <div class="small_sale">
+                            <p>68%</p><p>off</p>
+                        </div>
+
+                        <div class="card_description">
+                            <p><span>Bike Merida</span> SLX 26" extra power handle ppreciation Gift Basket My Chu...</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card_pic">
+                        <img src="assets/img/03.jpg" alt="">
+                    </div>
+                </div>
+                <div class="small-midle">
+                    <div class="price_block">
+                        <div class="card_price">
+                            <p>$49.99</p>
+                        </div>
+                        <div class="card_old-price"><span class="cross_line">
+                            <p>$69.99</p>
+                        </span></div>
+                    </div>
+                    
+                    <div class="copany">    
+                        <div class="card_company-name">
+                            <p>Amazon</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </a></div>
+
+
+
+            <div class="card_small card_yellow"><a href="#">
+                <div class="small-top">
+                    <div class="prise-descrip">
+
+                        <div class="small_sale">
+                            <p>66%</p><p>off</p>
+                        </div>
+
+                        <div class="card_description">
+                            <p><span>Bike Winora</span> 16" Zap with extra power handle ppreciation Gift Basket My Chu...</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card_pic">
+                        <img src="assets/img/04.jpg" alt="">
+                    </div>
+                </div>
+                <div class="small-midle">
+                    <div class="price_block">
+                        <div class="card_price">
+                            <p>$49.99</p>
+                        </div>
+                        <div class="card_old-price"><span class="cross_line">
+                            <p>$69.99</p>
+                        </span></div>
+                    </div>
+                    
+                    <div class="copany">    
+                        <div class="card_company-name">
+                            <p>Amazon</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </a></div>
+
+
+
+            <div class="card_small card_yellow"><a href="#">
+                <div class="small-top">
+                    <div class="prise-descrip">
+
+                        <div class="small_sale">
+                            <p>64%</p><p>off</p>
+                        </div>
+
+                        <div class="card_description">
+                            <p><span>Bike Haibike</span> 28" SDURO with extra power handle ppreciation Gift my Chu...</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card_pic">
+                        <img src="assets/img/05.jpg" alt="">
+                    </div>
+                </div>
+                <div class="small-midle">
+                    <div class="price_block">
+                        <div class="card_price">
+                            <p>$49.99</p>
+                        </div>
+                        <div class="card_old-price"><span class="cross_line">
+                            <p>$69.99</p>
+                        </span></div>
+                    </div>
+                    
+                    <div class="copany">    
+                        <div class="card_company-name">
+                            <p>Amazon</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </a></div>
+
+
+
+            <div class="card_small"><a href="#">
+                <div class="small-top">
+                    <div class="prise-descrip">
+
+                        <div class="small_sale">
+                            <p>70%</p><p>off</p>
+                        </div>
+
+                        <div class="card_description">
+                            <p><span>Bike Cannondale</span> 26" with extra power handle ppreciation Gift My Chu...</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card_pic">
+                        <img src="assets/img/06.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="small-midle">
+                    <div class="price_block">
+                        <div class="card_price">
+                            <p>$49.99</p>
+                        </div>
+                        <div class="card_old-price"><span class="cross_line">
+                            <p>$69.99</p>
+                        </span></div>
+                    </div>
+                    
+                    <div class="copany">    
+                        <div class="card_company-name">
+                            <p>Amazon</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </a></div>
+            
+
+
+            <div class="card_small"><a href="#">
+                <div class="small-top">
+                    <div class="prise-descrip">
+
+                        <div class="small_sale">
+                            <p>68%</p><p>off</p>
+                        </div>
+
+                        <div class="card_description">
+                            <p><span>Bike BMX</span> 20" with extra power handle ppreciation Gift Basket My Chu...</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card_pic">
+                        <img src="assets/img/07.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="small-midle">
+                    <div class="price_block">
+                        <div class="card_price">
+                            <p>$49.99</p>
+                        </div>
+                        <div class="card_old-price"><span class="cross_line">
+                            <p>$69.99</p>
+                        </span></div>
+                    </div>
+                    
+                    <div class="copany">    
+                        <div class="card_company-name">
+                            <p>Amazon</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </a></div>
+
+
+
+            <div class="card_small card_yellow"><a href="#">
+                <div class="small-top">
+                    <div class="prise-descrip">
+
+                        <div class="small_sale">
+                            <p>66%</p><p>off</p>
+                        </div>
+
+                        <div class="card_description">
+                            <p><span>Bike Schwinn</span> 29" with extra power handle ppreciation Gift Basket My Chu...</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card_pic">
+                        <img src="assets/img/08.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="small-midle">
+                    <div class="price_block">
+                        <div class="card_price">
+                            <p>$49.99</p>
+                        </div>
+                        <div class="card_old-price"><span class="cross_line">
+                            <p>$69.99</p>
+                        </span></div>
+                    </div>
+                    
+                    <div class="copany">    
+                        <div class="card_company-name">
+                            <p>Amazon</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </a></div>
+
+
+
+            <div class="card_small card_yellow"><a href="#">
+                <div class="small-top">
+                    <div class="prise-descrip">
+
+                        <div class="small_sale">
+                            <p>64%</p><p>off</p>
+                        </div>
+
+                        <div class="card_description">
+                            <p><span>Bike Giant</span> 28" with extra power handle ppreciation Gift Basket My Chu...</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card_pic">
+                        <img src="assets/img/09.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="small-midle">
+                    <div class="price_block">
+                        <div class="card_price">
+                            <p>$49.99</p>
+                        </div>
+                        <div class="card_old-price"><span class="cross_line">
+                            <p>$69.99</p>
+                        </span></div>
+                    </div>
+                    
+                    <div class="copany">    
+                        <div class="card_company-name">
+                            <p>Amazon</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </a></div>
+
+
+
+            <div class="card_small"><a href="#">
+                <div class="small-top">
+                    <div class="prise-descrip">
+
+                        <div class="small_sale">
+                            <p>70%</p><p>off</p>
+                        </div>
+
+                        <div class="card_description">
+                            <p><span>Bike Bianchi</span> 14" with extra power handle ppreciation Gift Basket My Chu...</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card_pic">
+                        <img src="assets/img/10.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="small-midle">
+                    <div class="price_block">
+                        <div class="card_price">
+                            <p>$49.99</p>
+                        </div>
+                        <div class="card_old-price"><span class="cross_line">
+                            <p>$69.99</p>
+                        </span></div>
+                    </div>
+                    
+                    <div class="copany">    
+                        <div class="card_company-name">
+                            <p>Amazon</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </a></div>
+            
+
+            <div class="card_small"><a href="#">
+                <div class="small-top">
+                    <div class="prise-descrip">
+
+                        <div class="small_sale">
+                            <p>68%</p><p>off</p>
+                        </div>
+
+                        <div class="card_description">
+                            <p><span>Bike Stolen</span> 28" with extra power handle ppreciation Gift Basket My Chu...</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card_pic">
+                        <img src="assets/img/11.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="small-midle">
+                    <div class="price_block">
+                        <div class="card_price">
+                            <p>$49.99</p>
+                        </div>
+                        <div class="card_old-price"><span class="cross_line">
+                            <p>$69.99</p>
+                        </span></div>
+                    </div>
+                    
+                    <div class="copany">    
+                        <div class="card_company-name">
+                            <p>Amazon</p>
+                        </div>
+                    </div>
+                </div> 
+
+            </a></div> 
+
+        </section>
+        
+        <nav class="aside"> 
+            <div class="search_widget">
+                <label for="search"><img src="assets/img/search.png" alt="search"></label>
+                <input id="search">
+            </div>
+            
+            <div class="calendar">
+                <div type="text" id="datepicker" autocomplete="off"></div>
+            </div>
+        </nav>
+    </div>
+
+
+    <footer>
+        <div class="wrapper">
+            <div class="footer_copyright">
+                <p>Copyright © 2020</p><br>
+                <p>VeloSmart UA, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="bg_registration">
+        
+        <form class="form_registration">
+            <div class="registration_close">
+                <div class="reg_close">
+                    <p>+</p>
+                </div>
+            </div>
+            <input class="input_check" autocomplete="username" id="userName" type="text" name="name" placeholder="Enter your name">
+            <input class="input_check" id="userEmail" type="email" name="email" placeholder="Enter your e-mail">
+            <input class="input_check" type="password" autocomplete="new-password" id="userPassword"  name="password" placeholder="Create new password">
+            <input class="input_check" type="password" autocomplete="new-password" id="userSubmitPassword"  name="repeat_pasword" placeholder="Confirm your password">
+            <p class="tips"></p>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+            <input id="registrBtn" type="submit" value="Log in" disabled>
+        </form>
+    </div>
+ 
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+</body>
+</html>

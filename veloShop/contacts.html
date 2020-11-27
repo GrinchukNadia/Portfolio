@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Velo Smart</title>
+    <!-------------фавикон------------------ -->
+        <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    <!-- -------------стили------------------ -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css">
+    <!-- --------------скрипты--------------- -->    
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="assets/js/app.js"></script>
+    </head>
+    <body>
+        <!-- -----------вход через facebook------- -->
+            <script>
+             
+                function statusChangeCallback(response) {
+                    console.log('statusChangeCallback');
+                    console.log(response);
+                    if (response.status === 'connected') {
+                    testAPI();  
+                    }
+                }
+        
+        
+                function checkLoginState() { 
+                    FB.getLoginStatus(function(response) { 
+                    statusChangeCallback(response);
+                    console.log(response);
+                    document.location.reload();
+                    });
+                }
+        
+        
+                window.fbAsyncInit = function() {
+                    FB.init({
+                    appId      : '355853125648385',
+                    cookie     : true, 
+                    xfbml      : true, 
+                    version    : 'v8.0' 
+                    });
+        
+        
+                    FB.getLoginStatus(function(response) { 
+                    statusChangeCallback(response);  
+                    });
+                };
+         
+                function testAPI() { 
+                    console.log('Welcome!  Fetching your information.... ');
+                    FB.api('/me', function(response) {
+                    console.log('Successful login for: ' + response.name);
+                    document.getElementById('singInBtn').style.display = 'none';
+                    document.getElementById('logOut').style.display = 'flex';
+                    document.getElementById('status').innerHTML =
+                        'Hello, ' + response.name + '!';
+                    });
+                };
+        
+            </script>
+        
+            
+             
+            <header>
+                <div class="wrapper wrapper_header">
+                    <div class="header_logo">
+                        <picture>
+                            <source class="logo" media="(max-width: 672px)" srcset="assets/img/logo_small.png">
+                            <img class="logo" src="assets/img/Nadia-04.png" alt="">
+                        </picture>
+                    </div>
+                    <div id="status"></div>
+                    <div id="singInBtn" class="singIn ">
+                        <p>Log In</p>
+                    </div>
+                    <div id="logOut" class="log_out" style="display: none;" onclick="FB.logout(function() {
+                        document.location.reload();
+                        document.getElementById('singInBtn').style.display = 'flex';
+                        document.getElementById('logOut').style.display = 'none';
+                    });" > 
+                        <p>Log Out</p>
+                    </div>
+                </div>
+            </header>
+
+
+    <div class="wrapper main">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li id="active"><a href="contacts.html">Contacts</a></li>
+                <li><a href="order.html">Order</a></li>
+            </ul>
+        </nav>
+
+        <section class="forms"> 
+            <form>
+                <input name="name" type="text" placeholder="Name">
+                <input name="surname" type="text" placeholder="Surname">
+                <textarea name="informarion" id="" cols="30" rows="10" maxlength="500"></textarea>
+                <input type="submit" value="Send">
+            </form>
+        </section>
+
+        <nav class="aside">
+            <div class="search_widget">
+                <label for="search"><img src="assets/img/search.png" alt="search"></label>
+                <input id="search">
+            </div>
+            <div class="calendar">
+                <div type="text" id="datepicker" autocomplete="off"></div>
+            </div>
+        </nav>
+    </div>
+
+
+    <footer>
+        <div class="wrapper">
+            <div class="footer_copyright">
+                <p>Copyright © 2020</p><br>
+                <p>VeloSmart UA, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="bg_registration">
+        <form class="form_registration">
+            <div class="registration_close">
+                <div class="reg_close">
+                    <p>+</p>
+                </div>
+            </div>
+            <input class="input_check" autocomplete="username" id="userName" type="text" name="name" placeholder="Enter your name">
+            <input class="input_check" id="userEmail" type="email" name="email" placeholder="Enter your e-mail">
+            <input class="input_check" type="password" autocomplete="new-password" id="userPassword"  name="password" placeholder="Create new password">
+            <input class="input_check" type="password" autocomplete="new-password" id="userSubmitPassword"  name="repeat_pasword" placeholder="Confirm your password">
+            <p class="tips"></p>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+            <input id="registrBtn" type="submit" value="Log in" disabled>
+        </form>
+    </div>
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Velo Smart</title>
+    <!-------------фавикон------------------ -->
+        <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    <!-- -------------стили-------------------->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+    <!-- --------------скрипты---------------->
+        <script src="assets/js/result.js"></script>
+    </head>
+<body>
+
+    
+     
+<header>
+    <div class="wrapper wrapper_header">
+        <div class="header_logo">
+            <picture>
+                <source class="logo" media="(max-width: 672px)" srcset="assets/img/logo_small.png">
+                <img class="logo" src="assets/img/Nadia-04.png" alt="">
+            </picture>
+        </div>
+        <div id="status"></div>
+        
+    </div>
+</header>
+
+
+<div class="wrapper main">
+    <nav class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+            <li id="active"><a href="order.html">Order</a></li>
+        </ul>
+    </nav> 
+
+    <div class="wrapper_result-order">
+        <div  class="result-order">
+            
+            <h2>Your order</h2>
+            <div class="iner-order">
+                <div class="">
+                    <h3>Model of bike</h3>
+                    <p >Model of bike: <span class="r_model-bike"></span></p>
+                    <p>Comment: <span class="r_comment-bike"></span></p>
+                </div>
+
+                <div class="">
+                    <h3>Billing address</h3>
+                    <p>First name: <span class="r_first-name"></span></p>
+                    <p>Last name: <span class="r_last-name"></span></p>
+                    <p>Street address: <span class="r_str-address"></span></p>
+                    <p>Region: <span class="r_region"></span></p>
+                    <p>Zip code: <span class="r_zip"></span></p>
+                    <p>Your phone: <span>+380</span> <span class="r_phone"></span></p>
+                </div>
+
+                <div class="">
+                    <h3>Delivery Address</h3>
+                    <p>First name: <span class="rd_first-name"></span></p>
+                    <p>Last name: <span class="rd_last-name"></span></p>
+                    <p>Street address: <span class="rd_str-address"></span></p>
+                    <p>Region: <span class="rd_region"></span></p>
+                    <p>Zip code: <span class="rd_zip"></span></p>
+                    <p>Your phone: <span>+380</span> <span class="rd_phone"></span></p>
+                </div>
+
+                <div class="">
+                    <h3>Delivery Date</h3>
+                    <p>Year: <span class="r_year"></span></p>
+                    <p>Month: <span class="r_month"></span></p>
+                    <p>Day: <span class="r_day"></span></p>
+                </div>
+
+                <div class="">
+                    <h3>Payment methods</h3>
+                    <p>Credit card number: <span class="r_card"></span></p>
+                    <p>Card expiration: <span class="r_expiration"></span></p>
+                    <p>CVV: <span class="r_cvv"></span></p>
+                </div>
+            </div>
+
+            <div class="button_back"><a  href="index.html">main page</a></div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<footer>
+    <div class="wrapper">
+        <div class="footer_copyright">
+            <p>Copyright © 2020</p><br>
+            <p>VeloSmart UA, Inc. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

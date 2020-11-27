@@ -111,6 +111,10 @@ ul.header_menu-phone {
 
 header .navigation_menu ul li {
     padding: 0 1.5rem;
+    transition: 0.5s ease-in;
+}
+header .navigation_menu ul li:hover{
+    box-shadow: 0px 1px 0px 0px  #000000;
 }
 
 header .navigation_menu ul li a {
@@ -198,7 +202,6 @@ header .header__footer .arrow__down {
 }
 
 footer {
-    height: 237px;
     width: 100%;
     background-color: #464646;
 }
@@ -326,20 +329,81 @@ main .hard-skills .skills_graph .skills_graph-block {
 }
 
 main .hard-skills .skills_graph .skills_graph-block .elem {
+    position: relative;
     width: 100%;
     padding: 0 0 1.3rem 0;
     margin-bottom: 2.9rem;
-    border-bottom: 3px solid #000000;
 }
-
-main .hard-skills .elem:before {
-    content: "";
-    width: 3px;
-    height: 3px;
-    background-color: #000000;
+ .elem .progress_line{
+    display: block;
+    width: 100%;
+    height: 5px;
+    margin-top: 13px;
+    border-radius: 95px;
+    background-color: #424242;
+    
+}
+main .hard-skills .elem .progress {
+    position: absolute;
+    top: 37px;
+    left: 0;
+    width: 3%;
+    height: 5px;
+    background-color: #E5CC49;
+    transition: all 2s ease 0s;
+}
+main .hard-skills .elem .dot {
+    
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: black;
     border-radius: 50%;
+    left: 0;
+    top: 33.4px;
+    transition: all 2s ease 0s;
+    z-index: 2;
+    
+}
+main  .elem .eightyP#activAnimation{
+    width: 90%;
+}
+main .elem .eightyD#activAnimation{
+    left: 90%;
 }
 
+main  .elem .seventyP#activAnimation{
+    width: 75%;
+}
+main .elem .seventyD#activAnimation{
+    left: 75%;
+}
+
+main  .elem .sixtyP#activAnimation{
+    width: 55%;
+}
+main .elem .sixtyD#activAnimation{
+    left: 55%;
+}
+
+main  .elem .fiftyP#activAnimation{
+    width: 56%;
+}
+main .elem .fiftyD#activAnimation{
+    left: 56%;
+}
+main  .elem .thirtyP#activAnimation{
+    width: 32%;
+}
+main .elem .thirtyD#activAnimation{
+    left: 32%;
+}
+main  .elem .fortyP#activAnimation{
+    width: 42%;
+}
+main .elem .fortyD#activAnimation{
+    left: 42%;
+}
 main .skills__main {
     padding-left: 10rem;
     padding-top: 2.9rem;
@@ -356,8 +420,7 @@ main .skills__main p {
 }
 
 main .portfolio {
-    /* height: 54rem; */
-    margin: 4.5rem 0;
+    margin: 1.5rem 0 4.5rem;
     background-color: #EEEEEE;
     padding-bottom: 6rem;
 }
@@ -379,8 +442,25 @@ main .portfolio__blocks .block {
     width: 45%;
     height: 29.6rem;
     background-color: #A7A7A7;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
 }
-
+.portfolio__blocks .block img {
+    width: 100%;
+    height: 29.6rem;
+    opacity: 0.6;
+    object-fit: cover;
+}
+.block img:hover{
+    opacity: 1;
+    /* border: 1px solid #e4e4e4; */
+}
+.portfolio__blocks .block:hover{
+    box-shadow: 2px 2px 8px 4px #e0e0e09f;
+}
 main .block:first-child {
     margin-right: 10px;
 }
@@ -409,7 +489,7 @@ main .certificates__carousel .carousel {
     width: 58%;
     display: -ms-flexbox;
     display: flex;
-    height: 11.6rem;
+    height: auto;
     -ms-flex-align: center;
     align-items: center;
 }
@@ -439,7 +519,7 @@ main .certificates__carousel .carousel .carousel__img {
 
 main .certificates__carousel .carousel .carousel__img img {
     width: 100%;
-    height: 114px;
+    height: auto;
     opacity: 0.8;
 }
 
@@ -600,14 +680,15 @@ main .certificates__carousel .carousel .carousel__img:last-child {
         margin-top: 30px;
         color: transparent;
         padding: 0;
+        margin-left: 36px;
     }
     .content__contact .email-svg {
         background: url(../images/email.svg) no-repeat;
         margin-top: 30px;
         text-indent: -9999px;
-        margin-left: 58px;
+        margin-left: 20x;
         width: 20px;
-        height: 46px;
+        height: 26px;
     }
     main .portfolio__blocks .block {
         margin: 0 0 20px 0;
@@ -615,4 +696,12 @@ main .certificates__carousel .carousel .carousel__img:last-child {
     footer .container {
         flex-direction: column;
     }
+    footer .navigaion__footer ul{
+        text-align: center;
+    }
+    footer .contacts {
+    text-align: center;
+    margin-top: 29px;
+    }
 }
+

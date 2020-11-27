@@ -1,0 +1,1073 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    position: relative;
+}
+a {
+    text-decoration: none;
+    color: #878787;
+}
+img {
+    width: inherit;
+}
+
+/* -------------------------jquery------------------------------------------------------- */
+.ui-datepicker-trigger {
+    margin-left: 5px;
+    position: relative;
+    top: 3px;
+    cursor: pointer;
+    }
+
+    div.ui-datepicker {
+        font-size: 14px;
+    }
+
+/* ----------header-------------------------------------------------------------------------- */
+header{
+    width: 100%;
+    height: 65px;
+    background-color: #2c2c2c; 
+}
+.logo{
+    height: 35px;
+    margin: 0 15px;
+}
+.wrapper{
+    max-width: 1500px;
+    height: inherit;
+    margin: 0 auto;
+}
+.wrapper_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_logo{
+    display: flex;
+    align-items: center;
+}
+.header_logo p{
+    color: #fff;
+    font-weight: bold;
+}
+/* -----------------registration--------------------------------------------------------- */
+
+.singIn > p{
+    color: #fff;
+    margin-right: 40px;
+    cursor: pointer;
+}
+#logOut{
+    color: #fff;
+    margin-right: 40px;
+    cursor: pointer;
+}
+.singIn > p:hover{
+    border-bottom: 2px solid #ff931d;
+}
+#logOut:hover{
+    border-bottom: 2px solid #ff931d; 
+}
+.bg_registration{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    display: none;
+}
+.form_registration{
+    background-color: #fff;
+    border: 2px solid red;
+    padding: 20px 40px;
+    border-radius: 4px;
+    width: fit-content;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.registration_close{
+    position: relative;
+    width: 100%;
+}
+.reg_close p{
+    position: absolute;
+    top: -15px;
+    right: -30px;
+    transform: rotate(45deg);
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.form_registration .input_wrong{
+    box-shadow: 0 0 3px 1px rgba(252, 70, 70, 0.849);
+}
+.form_registration .input_correct{
+    box-shadow: 0 0 3px 1px rgba(92, 252, 92, 0.795);
+}
+.tips {
+    margin-bottom: 12px;
+    color: red;
+}
+#status {
+    color: #fff;
+    padding: 5px 15px;
+}
+
+/* ----------slider---------------------------------------------------------------------- */
+#carousel{
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+#carousel .carousel_slider{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+#carousel .slide{
+    list-style-type: none;
+}
+#carousel .slide img{
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+.left, .right{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-bottom: 10px solid  #ffa62b;
+    border-right: 10px solid #ffa62b;
+
+    opacity: 0.4;
+    cursor: pointer;
+    top: 50%;
+    outline: none;
+    background: transparent;
+}
+.control .left {
+    left: 37px;
+    transform: rotate(135deg);
+}
+
+.control  .right {
+    right: 37px;
+    transform: rotate(-45deg);
+}
+button.left:hover,
+button.right:hover{
+      opacity: 1;
+} 
+.carousel-selected {
+    cursor: default;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    bottom: 5%;
+  }
+    
+.carousel-selected li {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #fff;
+    opacity: 0.7;
+    border-radius: 50%;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  
+.carousel-selected .selected{
+    background-color: #fff;
+    opacity: .7;
+    cursor: pointer;
+  }
+.carousel-selected li:hover, 
+.carousel-selected .selected:hover{
+      opacity: 1;
+  }
+ /* ----------middle part---------------------------------------------------------------- */
+.main{ 
+    display:flex;
+    justify-content: stretch;
+    align-items: stretch;
+}
+ .sidebar{
+    height: auto;
+    padding-top: 1px ;
+    margin-right: 16px;
+ }
+ .sidebar li{
+    background-color: #fff;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 16px 37px 16px 19px;
+    text-transform: uppercase;
+ }
+ .sidebar li:last-child{
+     border-radius: 0 0 10px 10px;
+ }
+ .sidebar li a:hover {
+    border-bottom: 2px solid #ff931d;
+ }
+ #active a{
+    border-bottom: 2px solid #ff931d;
+}
+ .sidebar a {
+    color: #1e1e1e;
+    font-weight: bold;
+    font-size: 20px;
+    width: max-content;
+ }
+.aside{
+    background-color:#dcdcdc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ .search_widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 14px 0 22px;
+ }
+ .search_widget img{
+     width: 22px;
+ }
+ input #search {
+    width: 184px;
+}
+ .calendar{
+    width: max-content;
+    padding: 10px;
+}
+@media screen and (max-width: 1190px){
+    .sidebar{
+        background-color: #fff;
+        margin: 0;
+    }
+    .main{
+        flex-direction: column;
+    }
+    .sidebar ul{
+        display: flex;
+        justify-content: center;
+        padding: 0 15px;
+    }
+}
+ /* -----------block with shop cards---------------------------------------- */
+ .cards{
+    background-color: #f0f0f0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    grid-column-gap: 7px;
+    grid-row-gap: 20px;
+    padding: 20px 5px 20px 20px;
+
+ }
+ 
+
+ /* -----------------big card-------------------------------------------------------------- */
+ .card_big {
+    width: 90%;
+    border: 2px solid #ff6666;
+    padding: 10px 10px 0;
+    background-color: #fff;
+    display: flex;
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.card_big a{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card_big:hover {
+    box-shadow: 0px 0px 0px 1px #ff6666;
+}
+.top_block{
+    display: flex;
+    flex-direction: column;
+}
+.card_big:hover .card_description span {
+    text-decoration: underline;
+}
+.card_description {
+    padding: 0 0 10px 0;
+}
+.card_sale {
+    width: 74px;
+    height: 74px;
+    margin-bottom: 10px;
+    background-color: #ff931d;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    opacity: 84%;
+}
+.card_sale p {
+    font-size: 21px; 
+    text-align: center;
+    color: #fff;
+    align-items: center;
+    margin: 13px 0px -15px;
+}
+.card_big-pic {
+    position: relative;
+}
+.card_big-pic img{
+    margin: 0 auto;
+    width: 100%;
+}
+.card_big .card_sale {
+    background-color: #ff6666;
+}
+.price_line {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px dotted #878787;
+}
+
+.price_block {
+    display: flex;
+    justify-content: left;
+}
+.cross_line:before {
+    border-bottom: 2px solid #878787;
+    position: absolute;
+    content: "";
+    width: 54px;
+    height: 11px;
+    transform: rotate(-14deg);
+}
+.card_price p{
+    font-size: 22px;
+}
+.card_big .card_price {
+    color: #ff6666;
+    margin-right: 10px;
+    margin-bottom: 12px;
+}
+.card_old-price{
+    padding: 6px 0px 0px 0px;
+}
+.card_big .card_description {
+    width: 90%;
+}
+.bottom_block {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 2px dotted #878787;
+}
+.card_free, .card_new {
+    border-right: 1px solid #878787;
+    padding-right: 16px;
+}
+.card_big time {
+    display: block;
+    margin: -8px 0 -9px;
+}
+
+
+/* ------------------small cards------------------------------------------------------ */
+.card_small {
+    position: relative;
+    color:  #878787;
+    width: 90%;
+    background-color: #ffffff;
+    border: 2px solid #ff931d;
+    padding: 10px 10px 0;
+}
+.small-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card_pic {
+    display: flex;
+    width: 100%;
+}
+.prise-descrip {
+    display: flex;
+    flex-direction: column;
+    width: 74%;
+}
+.small_sale {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 10px;
+    background-color: #ff931d;
+    border-radius: 50%;
+    opacity: 84%;
+}
+.card_yellow .small_sale{
+    background-color: #ffbe17;
+}
+.card_small:hover {
+    box-shadow: 0px 0px 0px 1px #ff931d;
+}
+.card_yellow:hover {
+    box-shadow: 0px 0px 0px 2px #ffbe17;
+}
+.card_yellow {
+    border: 2px solid #ffbe17;
+}
+.card_small:hover .card_description span {
+    text-decoration: underline;
+}
+.small_sale p {
+    text-align: center;
+    color: #fff;
+    align-items: center;
+    margin: 7px 0px -12px;
+    font-size: 18px;
+}
+.small-midle{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 2px dotted #878787;
+}
+.small-midle .card_price {
+    color: #ff931d;
+
+    margin-right: 10px;
+    margin-bottom: 12px;
+}
+ .card_yellow .card_price {
+    color: #ffbe17;
+}
+.small_bottom {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3px;
+}
+.one_section .card_new {
+    border-right: none;
+}
+.two_section .card_free{
+    border-right: none;
+}
+@media screen and (max-width: 1380px){
+    
+    .cards{
+       grid-template-columns: repeat(2, 1fr);
+       justify-items: center;
+       padding: 20px 8px 20px 8px;
+    }
+    div.ui-datepicker {
+        font-size: 16px;
+    }
+    .aside {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .sidebar{
+        background-color: #fff;
+        margin: 0;
+    }
+    .cards{
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        padding: 40px 30px;
+    }
+    .card_big,
+    .card_small{
+        width: 70%;
+    }
+    .card_big .card_description{
+        padding: 35px 0;
+    }      
+    .card_pic {
+        height: 100%;
+    }
+    .small_sale {
+        top: 6px;
+        right: 6px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .small_sale p{
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+    }
+    div.ui-datepicker {
+        font-size: 18px;
+    }
+    .aside {
+        display: flex;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 550px){
+    body p{
+        font-size: 14px;
+    }
+    .sidebar{
+        background-color: #fff;
+        margin: 0;
+    }
+    .sidebar ul{
+        padding: 0;
+    }
+    .sidebar li{
+        height: 44px;
+        padding: 6px 16px;
+    }
+    .cards{
+        padding: 40px 0;
+    }
+    .card_big-pic img{
+        width: 90%;
+    }
+    .ui-datepicker-inline.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all{
+        width: 100%;
+    }
+    .left, 
+    .right{
+        width: 16px;
+        height: 16px;
+        border-bottom: 5px solid #ffa62b;
+        border-right: 5px solid #ffa62b;
+        margin-top: -4%;
+    }
+    .control .right {
+        right: 16px;
+    }
+    .control .left{
+        left: 16px;
+    }
+    .carousel-selected li{
+        width: 8px;
+        height: 8px;
+    }
+    .small_sale {
+        top: 6px;
+        right: 6px;
+        width: 46px;
+        height: 46px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .small_sale p{
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+    }
+    .sidebar ul{
+        flex-direction: column;
+    }
+}
+/* ---------------footer---------------------------------------------------------------------- */
+footer{
+    width: 100%;
+    height: 65px;
+    background-color: #727272;
+    padding: 15px 0;
+ }
+ .footer_copyright{
+    text-align: center;
+    margin: 0 auto;
+    color: #ede7e3;
+ }
+
+/* ---------------forms block-------------------------------------------------- */
+ .forms{
+     width: 400%;
+     min-height: 550px;
+ }
+ .forms form{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     padding: 30px;
+ }
+ .forms form input{
+     margin: 10px;
+     padding: 8px 15px;
+ }
+ @media screen and (max-width: 1190px){
+     .forms{
+         width: 100%;
+     }
+ }
+ /* --------------------google map block----------------------------------------- */
+ #map{
+    width: 100%;
+    height: 440px;
+     margin: 20px 0 0 0;
+ }
+ address{
+     line-height: 30px;
+     font-style: normal;
+     margin: 20px 25px;
+     text-align: center;
+ }
+ address a {
+     color: #145967;
+ }
+/* ---------------order page----------------------------------------- */
+form.main_order {
+    width: 87.5%;
+}
+.main_order{
+    display: flex;
+    flex-direction: column;
+}
+.main_order input {
+    padding: 2px 15px;
+    outline: 1px #ff931d;
+}
+.main_order textarea{
+    padding: 12px 15px;
+}
+.main_order select{
+    padding: 2px 15px;
+    height: 37px;
+    border-radius: 6px;
+}
+.order_title{
+    padding: 20px 20px 10px 20px;
+}
+.order_title p{
+    font-size: 20px;
+}
+.order_form{
+    display: flex;
+    padding: 10px;
+}
+.left_order{
+    margin-right: 10px;
+    width: 65%;
+}
+.right_order{
+    width: 35%;
+}
+.right_order,
+.left_order{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+/* ____________Блок выбора товара___________________________________ */
+.order_form .choose_model{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+}
+.choose_model select{
+    height: 40px;
+    width: 100%;
+}
+.order_textarea{
+    width: 80%;
+    height: 200px;
+    margin: 15px 0;
+}
+/* ______________Блок адрес доставки_______________________________ */
+.address_form{
+    background-color: #ffffff;
+    padding: 15px 20px 15px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.billing_address{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 5px; 
+    padding: 20px;
+    width: 45%;
+}
+.billing_address> div{
+    display: flex;
+    flex-direction: row;
+}
+.billing_address> div>div{
+    display: flex;
+    flex-direction: column; 
+}
+.billing_address> div>div>span{
+    margin: 6px 0;
+}
+.billing_address> div>div>input,
+.billing_address> div>div>div>input{
+    height: 30px;
+    border-radius: 4px;
+    border:  1px solid rgb(121, 121, 121);
+}
+.delivery_address{
+    margin-left: 5px;
+}
+.order_address-title{
+    margin-bottom: 20px;
+}
+.order_name-first{
+    width: 50%;
+    margin-right: 6px;
+}
+.order_name-last{
+    width: 50%;
+}
+.order_address-zip{
+    width: 30%;
+}
+.order_address-region{
+    width: 70%;
+    margin-right: 6px;
+}
+.order_street{
+    width: 100%;
+}
+.order_fhone-form{
+    display: flex;
+    width: 100%;
+}
+.phone{
+    width: 70%;
+    height: 30px;
+}
+.order_fhone-form .first-span{
+    border: 1px solid rgb(121, 121, 121);
+    margin-right: 10px;
+    padding: 5px 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    max-height: 30px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.order_phone{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.order_phone input{
+    border: 1px solid rgb(121, 121, 121);
+    margin-right: 10px;
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+.order_checkbox{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.order_checkbox>input{
+    margin-right: 10px;
+}
+/*___________________Дата доставки____________________________________*/
+.delivery_date{
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.delivery_date p{
+    margin-bottom: 15px;
+}
+.order_date{
+    width: 100%;
+    display: flex;
+}
+.order_date-year{
+    width: 30%;
+    margin-right: 10px;
+}
+.order_date-month{
+    width: 38%;
+    margin-right: 10px;
+}
+.order_date-day{
+    width: 30%;
+}
+.order_date-year>select,
+.order_date-month>select,
+.order_date-day>select{
+    width: 100%;
+    height: 30px;
+    border-radius: 4px;
+}
+/* _______________Оплата картой________________________________________ */
+.payment_method{
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.payment_method>p{
+    margin-bottom: 15px;
+}
+.payment_method .payment_method-radio{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.payment_method .payment_method-radio input{
+    margin-right: 10px;
+}
+.credit_card{
+    background-color: rgb(236, 236, 236);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 0 auto;
+    max-width: 380px;
+}
+.credit_card-number{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+.credit_card-number input{
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid rgb(121, 121, 121);
+    margin-top: 8px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+.credit_card-details{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.credit_card-exp,
+.credit_card-cvv{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.credit_card-exp input{
+    width: 75%;
+}
+.credit_card-cvv{
+    width: 25%;
+}
+.credit_card-details div input{
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid rgb(121, 121, 121);
+}
+/* ____________Создать аккаунт__________________________________________ */
+.create_account{
+    background-color: #ffffff;
+    padding: 20px;
+}
+.create_account p{
+    margin-bottom: 15px;
+}
+.create_account-password{
+    display: flex;
+    flex-direction: column;
+}
+.create_account-username{
+    display: flex;
+    flex-direction: column;
+}
+.create_account-username input{
+    height: 30px;
+}
+.create_account>div>input,
+.create_account-username input{
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid rgb(121, 121, 121);
+    margin-bottom: 15px;
+}
+.create_account-password{
+    display: flex;
+}
+.create_account-password>div{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.create_account-password>div input{
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid rgb(121, 121, 121);
+    margin-bottom: 15px;
+}
+#create_account-checkbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 30px;
+    margin-bottom: 15px;
+}
+#create_account-checkbox input[type="checkbox"]{
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+.create_account #create_acc{
+    display: none;
+}
+/* ________________Кнопка подтверждения заказа__________________________ */
+.order_submit{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.order_submit-btn{
+    background-color: rgb(51, 51, 51);
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+   
+    border-radius: 6px;
+    margin-right: 11%;
+    cursor: pointer;
+}
+.main_order .order_submit input{
+     padding: 12px 28px;
+}
+/* _________________валидация_________________________________________________ */
+.main_order .order-active{
+    border-bottom: 2px solid rgb(4, 180, 48);
+}
+.main_order .order-inactive{
+    border-bottom: 2px solid #ff2a2a;
+}
+.order-validation{
+    color: #ff2a2a;
+    font-size: 14px;
+}
+/* ___________________Медиазапросы для страницы заказа товара_________________ */
+@media screen and (max-width: 1354px){
+    .address_form{
+        flex-direction: column;
+    }
+    .billing_address{
+        width: 95%;
+    }
+    .right_order{
+        justify-content: flex-start;
+    }
+}
+@media screen and (max-width: 1190px){
+    form.main_order {
+        width: 99.8%;
+    }
+}
+@media screen and (max-width: 1077px){
+    .order_form{
+        flex-direction: column;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .address_form{
+        margin-bottom: 10px;
+    }
+    .left_order{
+        margin-right: 0;
+        width: 100%;
+    }
+    .right_order{
+        width: 100%;
+    }
+    .order_submit-btn{
+    margin: 0 auto;
+    }
+    .main_order select {
+        padding: 2px 6px;
+    }
+}
+@media screen and (max-width: 550px){
+    .order_form{
+        width: 92%;
+    }
+}
+/* -------order result------------ */
+.wrapper_result-order{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.wrapper_result-order h2{
+    border-bottom: 1px solid;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 34px;
+}
+.result-order{
+    background-color: #fff;
+    padding: 40px 10px 10px;
+    margin: 30px;
+    width: 100%;
+}
+
+.result-order h3{
+    margin: 25px 0 5px;
+    text-transform: uppercase;
+}
+.result-order p {
+    font-size: 17px;
+    font-weight: 600;
+}
+.result-order span{
+    font-size: 15px;
+    font-weight: 500;
+}
+.iner-order{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    align-items: flex-start;
+    justify-content: center;
+    grid-auto-flow: row dense;
+    gap: 20px;
+}
+.button_back{
+    border: 1px solid rgb(109, 109, 109);
+    border-radius: 3px;
+    padding: 20px 35px;
+    margin: 60px auto 30px;
+    text-transform: uppercase;
+    width: 20%;
+    text-align: center;
+}
+.button_back:hover{
+    background-color: rgb(71, 71, 71);
+}
+
+ 

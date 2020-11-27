@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Velo Smart</title>
+    <!-------------фавикон------------------ -->
+        <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    <!-- -------------стили------------------ -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css">
+    <!-- --------------скрипты--------------- -->    
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="assets/js/app.js"></script>
+    </head>
+    <body>
+<!-- -----------вход через facebook------- -->
+        <script>
+            
+            function statusChangeCallback(response) {
+                console.log('statusChangeCallback');
+                console.log(response);
+                if (response.status === 'connected') {
+                testAPI();  
+                }
+            }
+
+
+            function checkLoginState() { 
+                FB.getLoginStatus(function(response) { 
+                statusChangeCallback(response);
+                console.log(response);
+                document.location.reload();
+                });
+            }
+
+
+            window.fbAsyncInit = function() {
+                FB.init({
+                appId      : '355853125648385',
+                cookie     : true, 
+                xfbml      : true, 
+                version    : 'v8.0' 
+                });
+
+
+                FB.getLoginStatus(function(response) { 
+                statusChangeCallback(response);  
+                });
+            };
+        
+            function testAPI() { 
+                console.log('Welcome!  Fetching your information.... ');
+                FB.api('/me', function(response) {
+                console.log('Successful login for: ' + response.name);
+                document.getElementById('singInBtn').style.display = 'none';
+                document.getElementById('logOut').style.display = 'flex';
+                document.getElementById('status').innerHTML =
+                    'Hello, ' + response.name + '!';
+                });
+            };
+
+        </script>
+        
+            
+             
+        <header>
+            <div class="wrapper wrapper_header">
+                <div class="header_logo">
+                    <picture>
+                        <source class="logo" media="(max-width: 672px)" srcset="assets/img/logo_small.png">
+                        <img class="logo" src="assets/img/Nadia-04.png" alt="">
+                    </picture>
+                </div>
+                <div id="status"></div>
+                <div id="singInBtn" class="singIn ">
+                    <p>Log In</p>
+                </div>
+                <div id="logOut" class="log_out" style="display: none;" onclick="FB.logout(function() {
+                    document.location.reload();
+                    document.getElementById('singInBtn').style.display = 'flex';
+                    document.getElementById('logOut').style.display = 'none';
+                });" > 
+                    <p>Log Out</p>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="wrapper main">
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                    <li id="active"><a href="order.html">Order</a></li>
+                </ul>
+            </nav> 
+            
+            
+            <form id="order" name="orderForm" class="main_order" action="result.html">
+                <div class="order_title">
+                    <p>PRODUCT ORDER FORM</p>
+                </div>
+
+                <div class="order_form">
+                    <div class="left_order">
+                        <div class="choose_model">
+                            <select name="bikeModel" class="bike_model">
+                                <option value=""></option>
+                                <option value="Bike Apollo Neo 20&#34; - $49.99">Bike Apollo Neo 20" - $49.99</option>
+                                <option value="Bike Pride RoCX 28&#34; - $49.99">Bike Pride RoCX 28" - $49.99</option>
+                                <option value="Bike Merida SLX 26&#34; - $49.99">Bike Merida SLX 26" - $49.99</option>
+                                <option value="Bike Winora Zap 16&#34;- $49.99">Bike Winora Zap 16"- $49.99</option>
+                                <option value="Bike Hibike SDURO 28&#34; - $49.99">Bike Hibike SDURO 28" - $49.99</option>
+                                <option value="Bike Cannondale 26&#34; - $49.99">Bike Cannondale 26" - $49.99</option>
+                                <option value="Bike BMX 20&#34; - $49.99">Bike BMX 20" - $49.99</option>
+                                <option value="Bike Schwinn  29&#34; - $49.99">Bike Schwinn  29" - $49.99</option>
+                                <option value="Bike Giant 28&#34; - $49.99">Bike Giant 28" - $49.99</option>
+                                <option value="Bike Bianchi 14&#34; - $49.99">Bike Bianchi 14" - $49.99</option>
+                                <option value="Bike Stolen 28&#34; - $49.99">Bike Stolen 28" - $49.99</option>
+                            </select>
+                            <textarea class="order_textarea" name="comment" id="order_comment"></textarea>
+                        </div>
+                        <div class="address_form">
+                            <div class="billing_address">
+
+                                <div class="order_address-title">
+                                    <p>BILLING ADDRESS</p>
+                                </div>
+
+                                <div class="order_name">
+                                    <div class="order_name-first">
+                                        <span>First name</span>
+                                        <input data-rule="name"  class="first-name"  name="billingFirstName" type="text">
+                                        <span class="order-validation" ></span>
+                                    </div>
+                                    <div class="order_name-last">
+                                        <span>Last name</span>
+                                        <input data-rule="name" name="billingLastName" class="last-name" type="text">
+                                        <span class="order-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <div class="order_street">
+                                        <span>Stret address</span>
+                                        <input data-rule="street" class="street-address" type="text">
+                                        <span class="order-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="order_address">
+                                    <div class="order_address-region">
+                                        <span>Region</span>
+                                        <select class="region" name="" id="">
+                                            <option></option>
+                                            <option value="Cherkasy">Cherkasy Region</option>
+                                            <option value="Chernihiv">Chernihiv Region</option>
+                                            <option value="Chernivtsi">Chernivtsi Region</option>
+                                            <option value="Dnipropetrovs'k">Dnipropetrovs'k Region</option>
+                                            <option value="Donets'k">Donets'k Region</option>
+                                            <option value="Ivano-Frankivs’k">Ivano-Frankivs’k Region</option>
+                                            <option value="Kharkiv">Kharkiv Region</option>
+                                            <option value="Kherson">Kherson Region</option>
+                                            <option value="Khmelnytsky">Khmelnytsky Region</option>
+                                            <option value="Kirovograd">Kirovograd Region</option>
+                                            <option value="Kyiv">Kyiv Region</option>
+                                            <option value="Luhans'k">Luhans'k Region</option>
+                                            <option value="Lviv">Lviv Region</option>
+                                            <option value="Mykolayiv">Mykolayiv Region</option>
+                                            <option value="Odesa">Odesa Region</option>
+                                            <option value="Poltava">Poltava Region</option>
+                                            <option value="Rivne">Rivne Region</option>
+                                            <option value="Sumy">Sumy Region</option>
+                                            <option value="Ternopil">Ternopil Region</option>
+                                            <option value="Vinnytsya">Vinnytsya Region</option>
+                                            <option value="Volyn">Volyn Region</option>
+                                            <option value="Zakarpattya">Zakarpattya Region</option>
+                                            <option value="Zaporizhzhya">Zaporizhzhya Region</option>
+                                            <option value="Zhytomyr">Zhytomyr Region</option>
+                                        </select>
+                                        <span></span>
+                                    </div>
+                                    <div class="order_address-zip">
+                                        <span>Zip code</span>
+                                        <input class="zip" data-rule="zip" type="text"> 
+                                        <span class="order-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <div class="">
+                                        <span>Your phone</span>
+                                        <div class="order_fhone-form">
+                                            <div class="first-span" class=""><span> +380 </span></div>
+
+                                            <div class="order_phone">
+                                                <input data-rule="phone" class="phone phone-nbr" type="text">
+                                                <span class="order-validation"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="delivery_address billing_address">
+                                <div class="order_address-title">
+                                    <p>DELIVERY ADDRESS</p>
+                                </div>
+
+                                <div class="order_checkbox">
+                                    <input type="checkbox">
+                                    <span>Same as billing address</span>
+                                </div>
+
+                                <div class="order_name">
+                                    <div class="order_name-first">
+                                        <span>First name</span>
+                                        <input class="order_first-name" data-rule="name"  type="text">
+                                        <span class="order-validation"></span>
+                                    </div>
+                                    <div class="order_name-last">
+                                        <span>Last name</span>
+                                        <input class="order_last-name" data-rule="name"  type="text">
+                                        <span class="order-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <div class="order_street">
+                                        <span>Stret address</span>
+                                        <input class="order_street-address" data-rule="street" type="text">
+                                        <span class="order-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="order_address">
+                                    <div class="order_address-region">
+                                        <span>Region</span>
+                                        <select class="order_region" name="" id="">
+                                            <option value=""></option>
+                                            <option value="Cherkasy">Cherkasy Region</option>
+                                            <option value="Chernihiv">Chernihiv Region</option>
+                                            <option value="Chernivtsi">Chernivtsi Region</option>
+                                            <option value="Dnipropetrovs'k">Dnipropetrovs'k Region</option>
+                                            <option value="Donets'k">Donets'k Region</option>
+                                            <option value="Ivano-Frankivs’k">Ivano-Frankivs’k Region</option>
+                                            <option value="Kharkiv">Kharkiv Region</option>
+                                            <option value="Kherson">Kherson Region</option>
+                                            <option value="Khmelnytsky">Khmelnytsky Region</option>
+                                            <option value="Kirovograd">Kirovograd Region</option>
+                                            <option value="Kyiv">Kyiv Region</option>
+                                            <option value="Luhans'k">Luhans'k Region</option>
+                                            <option value="Lviv">Lviv Region</option>
+                                            <option value="Mykolayiv">Mykolayiv Region</option>
+                                            <option value="Odesa">Odesa Region</option>
+                                            <option value="Poltava">Poltava Region</option>
+                                            <option value="Rivne">Rivne Region</option>
+                                            <option value="Sumy">Sumy Region</option>
+                                            <option value="Ternopil">Ternopil Region</option>
+                                            <option value="Vinnytsya">Vinnytsya Region</option>
+                                            <option value="Volyn">Volyn Region</option>
+                                            <option value="Zakarpattya">Zakarpattya Region</option>
+                                            <option value="Zaporizhzhya">Zaporizhzhya Region</option>
+                                            <option value="Zhytomyr">Zhytomyr Region</option>
+                                        </select>
+                                        <span></span>
+                                    </div>
+                                    <div class="order_address-zip">
+                                        <span>Zip code</span>
+                                        <input class="order_zip" data-rule="zip" type="text">
+                                        <span class="order-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <div class="">
+                                        <span>Your phone</span>
+                                        <div class="order_fhone-form">
+                                            <div class="first-span" class=""><span> +380 </span></div>
+
+                                            <div class="order_phone">
+                                                <input data-rule="phone" class="phone order_phone-nbr" type="text">
+                                                <span class="order-validation"></span>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right_order">
+                        <div class="delivery_date">
+                            <P>DELIVERY DATE</P>
+                            <div class="order_date">
+                                <div class="order_date-year">
+                                    <span>Year</span><br>
+                                    <select name="year" id="year">
+                                        <option value=""></option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                    </select>
+                                </div>
+                                <div class="order_date-month">
+                                    <span>Month</span><br>
+                                    <select name="month" id="month">
+                                        <option value=""></option>
+                                        <option value="1">January</option>
+                                        <option value="2">February</option>
+                                        <option value="3">March</option>
+                                        <option value="4">April</option>
+                                        <option value="5">May</option>
+                                        <option value="6">June</option>
+                                        <option value="7">July</option>
+                                        <option value="8">August</option>
+                                        <option value="9">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">Novenmer</option>
+                                        <option value="12">December</option>
+                                    </select>
+                                </div>
+                                <div class="order_date-day">
+                                    <span>Day</span><br>
+                                    <select name="date" id="day">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment_method">
+                            <p>PAYMENT METHODS</p>
+                            <div class="payment_method-radio">
+                                <input class="creditCard" name="paymentMethod" type="radio" checked>
+                                <p>Credit card</p>
+                            </div>
+
+                            <div class="payment_method-radio">
+                                <input class="cash" name="paymentMethod" type="radio" unchecked>
+                                <p>Cash on delivery</p>
+                            </div>
+
+                            <div class="credit_card">
+                                <div class="credit_card-number">
+                                    <span>Credit card number</span>
+                                    <input id="card-number" data-rule="card" placeholder="_____   _____   _____   _____" type="text">
+                                    <span class="order-validation"></span>
+                                </div>
+                                <div class="credit_card-details">
+                                    <div class="credit_card-exp">
+                                        <span>Card expiration</span>
+                                        <input id="expir" data-rule="expiration" type="text">
+                                        <span class="order-validation"></span>
+                                    </div>
+                                    <div class="credit_card-cvv">
+                                        <span>CVV</span>
+                                        <input id="cvv" data-rule="cvv" type="text">
+                                        <span class="order-validation"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="create_account">
+                            <div id="create_account-checkbox">
+                                <input  class="acc_checkbox" id="creat_account-input"  type="checkbox">
+                            <span>Create an account</span>
+                            </div>
+
+                            
+
+                            <div id="create_acc">
+                                <div class="create_account-username">
+                                    <span>User name</span>
+                                    <input data-rule="name" type="text">
+                                    <span class="order-validation"></span>
+                                </div>
+
+                                <div class="create_account-password">
+                                    <div class="ord_ps">
+                                        <span>Password</span>
+                                        <input class="order-pass" data-rule="password" type="password">
+                                        <span class="order-validation"></span>
+                                    </div>
+                                    <div class="ord_rep-ps">
+                                        <span>Confirm password</span>
+                                        <input class="order-pass-check" data-rule="password" type="password">
+                                        <span class="order-validation"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order_submit">
+                            <input id="subm" class="order_submit-btn"  type="submit" value="SUBMIT ORDER">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="" id="msg"> <pre></pre></div>
+                
+            </form> 
+        </div>
+
+
+        <footer>
+            <div class="wrapper">
+                <div class="footer_copyright">
+                    <p>Copyright © 2020</p><br>
+                    <p>VeloSmart UA, Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <div class="bg_registration">
+            <form class="form_registration">
+                <div class="registration_close">
+                    <div class="reg_close">
+                        <p>+</p>
+                    </div>
+                </div>
+                <input class="input_check" autocomplete="username" id="userName" type="text" name="name" placeholder="Enter your name">
+                <input class="input_check" id="userEmail" type="email" name="email" placeholder="Enter your e-mail">
+                <input class="input_check" type="password" autocomplete="new-password" id="userPassword"  name="password" placeholder="Create new password">
+                <input class="input_check" type="password" autocomplete="new-password" id="userSubmitPassword"  name="repeat_pasword" placeholder="Confirm your password">
+                <p class="tips"></p>
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+                <input id="registrBtn" type="submit" value="Log in" >
+            </form>
+        </div>
+
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    </body>
+    </html>

@@ -93,12 +93,37 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\r\n$('.carousel').slick({\r\n    slidesToShow: 3,\r\n    slidesToScroll: 1,\r\n    autoplay: true,\r\n    autoplaySpeed: 9000,\r\n    arrows: true,\r\n    prevArrow: '<svg class=\"left_arrow\" width=\"13\" height=\"25\" viewBox=\"0 0 13 25\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 12.4989L0.870549 11.481L10.6796 -0.00109863L13 2.03465L4.06154 12.4989L13 22.9632L10.6826 24.9989L0.873614 13.5168L0 12.4989Z\" fill=\"black\"/></svg>',\r\n    nextArrow: '<svg class=\"right_arrow\" width=\"13\" height=\"25\" viewBox=\"0 0 13 25\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M13 12.5011L12.1295 13.519L2.32044 25.0011L3.55942e-07 22.9653L8.93846 12.5011L4.0152e-06 2.03685L2.31738 0.00108378L12.1264 11.4832L13 12.5011Z\" fill=\"black\"/></svg>',\r\n});\r\n\r\n\n\n//# sourceURL=webpack:///./src/assets/js/app.js?");
+// eval("\r\n$('.carousel').slick({\r\n    slidesToShow: 3,\r\n    slidesToScroll: 1,\r\n    autoplay: true,\r\n    autoplaySpeed: 9000,\r\n    arrows: true,\r\n    prevArrow: '<svg class=\"left_arrow\" width=\"13\" height=\"25\" viewBox=\"0 0 13 25\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 12.4989L0.870549 11.481L10.6796 -0.00109863L13 2.03465L4.06154 12.4989L13 22.9632L10.6826 24.9989L0.873614 13.5168L0 12.4989Z\" fill=\"black\"/></svg>',\r\n    nextArrow: '<svg class=\"right_arrow\" width=\"13\" height=\"25\" viewBox=\"0 0 13 25\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M13 12.5011L12.1295 13.519L2.32044 25.0011L3.55942e-07 22.9653L8.93846 12.5011L4.0152e-06 2.03685L2.31738 0.00108378L12.1264 11.4832L13 12.5011Z\" fill=\"black\"/></svg>',\r\n});\r\n\r\n\n\n//# sourceURL=webpack:///./src/assets/js/app.js?");
 
 /***/ })
 
 /******/ });
 
+$('.carousel').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 9000,
+  arrows: true,
+  prevArrow: '<svg class="left_arrow" width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 12.4989L0.870549 11.481L10.6796 -0.00109863L13 2.03465L4.06154 12.4989L13 22.9632L10.6826 24.9989L0.873614 13.5168L0 12.4989Z" fill="black"/></svg>',
+  nextArrow: '<svg class="right_arrow" width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 12.5011L12.1295 13.519L2.32044 25.0011L3.55942e-07 22.9653L8.93846 12.5011L4.0152e-06 2.03685L2.31738 0.00108378L12.1264 11.4832L13 12.5011Z" fill="black"/></svg>',
+  responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+});
 
 $(".modal_popup").magnificPopup({
     // delegate: 'img',
@@ -107,7 +132,6 @@ $(".modal_popup").magnificPopup({
 		gallery: {
       enabled: true, 
       navigateByImgClick: true,
-      tCounter: '<span class="mfp-counter">%curr% of %total%</span>',
 			preload: [1,1] // Will preload 0 - before current, and 1 after the current image
     },
     mainClass: 'mfp-with-zoom', 
@@ -134,3 +158,67 @@ $(".modal_popup").magnificPopup({
     $(".header_burger, .header__navigation").toggleClass("active_burger");
   });
 
+  $("#aboutMeNav, #certificatesNav, #portfolioNav, #skillsNav").click(function(){
+    $(".header_burger, .header__navigation").removeClass("active_burger");
+  })
+  
+// animation on scroll
+
+const animItems = document.querySelectorAll('.anim');
+
+if (animItems.length > 0) {
+  window,addEventListener('scroll', animOnScroll);
+  function animOnScroll() {
+    for (let i = 0; i < animItems.length; i++){
+      const animItem = animItems[i];
+      const animItemHeight = animItem.offsetHeight;
+      const animItemOffset = offset(animItem).top;
+      const animStart = 4;
+
+      let animItemPoint = window.innerHeight - animItemHeight / animStart;
+      if (animItemHeight > window.innerHeight) {
+        animItemPoint = window.innerHeight - window.innerHeight / animStart;
+      }
+      
+      if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+        animItem.id = "activAnimation";
+      } else{
+        animItem.removeAttribute('id');
+      }
+    }
+  }
+  function offset(el) {
+    const rect = el.getBoundingClientRect(),
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+      scrolTop = window.pageYOffset || document.documentElement.scrolTop;
+    return { top: rect.top + scrolTop, left: rect.left + scrollLeft}
+  }
+  animOnScroll();
+}
+
+// const progress = document.querySelector(".progress");
+// observer = new IntersectionObserver((entries) => {
+//   console.log(entries);
+
+//   if(entries[0].intersectionRatio > 0) {
+//     entries[0].target.style.animation = `2s linear forwards  progress`
+//   }
+//   else {
+//     entries[0].target.style.animation = 'none';
+//   }
+// })
+
+// const dot = document.querySelector(".dot");
+// observerD = new IntersectionObserver((entries) => {
+//   console.log(entries);
+
+//   if(entries[0].intersectionRatio > 0) {
+//     entries[0].target.style.animation = `2s linear forwards  eighty`
+//   }
+//   else {
+//     entries[0].target.style.animation = 'none';
+//   }
+// })
+
+// observer.observe(progress);
+// observerD.observe(dot);

@@ -34,10 +34,10 @@
 
                     <nav class="navigation_menu header__navigation">
                         <ul class="header_menu-phone">
-                            <li><a href="#about_me"> about me</a></li>
-                            <li><a href="#skills"> skills</a></li>
-                            <li><a href="#portfolio"> portfolio</a></li>
-                            <li><a href="#certifications"> certifications</a></li>
+                            <li><a id="aboutMeNav" href="#about_me"> about me</a></li>
+                            <li><a id="skillsNav" href="#skills"> skills</a></li>
+                            <li><a id="portfolioNav" href="#portfolio"> portfolio</a></li>
+                            <li><a id="certificatesNav" href="#certifications"> certifications</a></li>
                         </ul>
                     </nav>
 
@@ -77,7 +77,10 @@
                             <p> I am a responsible person with a clear planning system and creative thinking, I observe with project deadlines</p>
                         </div>
                         
-                        <img class="main_photo" src="assets/images/IMG_20200430_161314.webp" alt="">
+                        <picture >
+                            <source class="main_photo" srcset="assets/images/IMG_20200430_161314.webp" type="image/webp">
+                            <img class="main_photo" src="assets/images/IMG_20200430_161314.jpg" alt="">
+                        </picture>
                 
                     </div>
                 </div>
@@ -92,14 +95,53 @@
                                 <p>I draw freely by hand and on the tablet (vector and raster graphics) Confident User: Adobe Illustrator and Photoshop, Procreate. My skills allow me to solve the most unusual tasks of the customer. </p>        
                                 <div class="skills_graph">
                                     <div class="skills_graph-block">
-                                        <div class="elem">HTML</div>
-                                        <div class="elem">CSS</div>
-                                        <div class="elem">JQuery</div>
+
+                                        <div class="elem">
+                                            HTML
+                                            <span class="progress_line "></span>
+                                            <div class="dot eightyD anim"></div>
+                                            <div class="progress eightyP anim"></div>
+                                        </div>
+
+                                        <div class="elem">
+                                            SCSS
+                                            <span class="progress_line "></span>
+                                            <div class="dot fiftyD anim"></div>
+                                            <div class="progress fiftyP anim"></div>
+                                        </div>
+
+                                        <div class="elem">
+                                            CSS
+                                            <span class="progress_line "></span>
+                                            <div class="dot seventyD anim"></div>
+                                            <div class="progress seventyP anim"></div>
+                                        </div>
+
                                     </div>
+
                                     <div class="skills_graph-block">
-                                        <div class="elem">HTML</div>
-                                        <div class="elem">CSS</div>
-                                        <div class="elem">JQuery</div>
+
+                                        <div class="elem">
+                                            JQuery
+                                            <span class="progress_line "></span>
+                                            <div class="dot sixtyD anim"></div>
+                                            <div class="progress sixtyP anim"></div>
+                                        </div>
+
+                                        <div class="elem">
+                                            JavaScript
+                                            <span class="progress_line "></span>
+                                            <div class="dot thirtyD anim"></div>
+                                            <div class="progress thirtyP anim"></div>
+                                        </div>
+
+                                        <div class="elem">
+                                            Github
+                                            <span class="progress_line "></span>
+                                            <div class="dot fortyD anim"></div>
+                                            <div class="progress fortyP anim"></div>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -120,8 +162,10 @@
                     <div class="container">
                         <div class="portfolio__heading"> PORTFOLIO</div>
                         <div class="portfolio__blocks">
-                            <div class="block"></div>
-                            <div class="block"></div>
+
+                            <a class="block" href="toDo/index.html" target="_blank">To Do application<img src="assets/images/toDoProgect.jpg" alt=""></a>
+                            <a class="block" href="veloShop/index.html" target="_blank">Velo Shop <img src="assets/images/veloShopProgect.jpg" alt=""></a>
+
                         </div>
                     </div>
                 </div>
@@ -136,38 +180,42 @@
                             
                                 
                             <div class="carousel">
-                                <!-- <svg class="left_arrow" width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 12.4989L0.870549 11.481L10.6796 -0.00109863L13 2.03465L4.06154 12.4989L13 22.9632L10.6826 24.9989L0.873614 13.5168L0 12.4989Z" fill="black"/>
-                                </svg>
-                                    
-                                <svg class="right_arrow" width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M13 12.5011L12.1295 13.519L2.32044 25.0011L3.55942e-07 22.9653L8.93846 12.5011L4.0152e-06 2.03685L2.31738 0.00108378L12.1264 11.4832L13 12.5011Z" fill="black"/>
-                                </svg> -->
-        
                                 <div class="carousel__img ">
-                                    <a class="modal_popup" href="assets/images/rusian.webp">
-                                    <img id="img_carousel" src="assets/images/rusian.webp" alt="speed typing rusian">
+                                    <a class="modal_popup" href="assets/images/russian.jpg">
+                                        <picture>
+                                            <source id="img_carousel" srcset="assets/images/rusian.webp" type="image/webp">
+                                            <img id="img_carousel" src="assets/images/russian.jpg" alt="">
+                                        </picture>
                                     </a>
                                     
                                 </div>
         
                                 <div class="carousel__img ">
-                                    <a class="modal_popup" href="assets/images/english.webp">
-                                    <img id="img_carousel" src="assets/images/english.webp" alt="speed typing english">
+                                    <a class="modal_popup" href="assets/images/english.jpg">
+                                        <picture>
+                                            <source id="img_carousel" srcser="assets/images/english.webp" type="image/webp"> 
+                                            <img id="img_carousel" src="assets/images/english.jpg" alt="">
+                                        </picture>
                                     </a>
         
                                 </div>
         
                                 <div class="carousel__img ">
-                                    <a class="modal_popup" href="assets/images/GrasshopperCodingFundamentalsCertificate.webp">    
-                                    <img id="img_carousel" src="assets/images/GrasshopperCodingFundamentalsCertificate.webp" alt="JavaScript sertificat">
+                                    <a class="modal_popup" href="assets/images/GrasshopperCodingFundamentalsCertificate.jpg">
+                                        <picture>
+                                            <source id="img_carousel" srcset="assets/images/GrasshopperCodingFundamentalsCertificate.webp" type="image/webp">
+                                            <img id="img_carousel" src="assets/images/GrasshopperCodingFundamentalsCertificate.jpg" alt="">
+                                        </picture>
                                     </a>
         
                                 </div>
         
                                 <div class="carousel__img ">
-                                    <a class="modal_popup" href="assets/images/GrasshopperCodingFundamentalsIICertificate.webp">    
-                                    <img id="img_carousel" src="assets/images/GrasshopperCodingFundamentalsIICertificate.webp" alt="JavaScript sertificat">
+                                    <a class="modal_popup" href="assets/images/GrasshopperCodingFundamentalsIICertificate.jpg">
+                                        <picture>
+                                            <source id="img_carousel" srcset="assets/images/GrasshopperCodingFundamentalsIICertificate.webp" type="image/webp">
+                                            <img id="img_carousel" src="assets/images/GrasshopperCodingFundamentalsIICertificate.jpg" alt="">
+                                        </picture>
                                     </a>
         
                                 </div>
