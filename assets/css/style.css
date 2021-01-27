@@ -190,7 +190,7 @@ header .header__footer .arrow__down {
 .container {
     max-width: 110rem;
     margin: 0 auto;
-    padding-left: 5rem;
+    /* padding-left: 5rem; */
     padding-right: 5rem;
 }
 
@@ -432,10 +432,9 @@ main .portfolio .portfolio__heading {
 }
 
 main .portfolio__blocks {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: end;
 }
 
 main .portfolio__blocks .block {
@@ -447,6 +446,7 @@ main .portfolio__blocks .block {
     text-align: center;
     font-size: 20px;
     color: #fff;
+    margin-bottom: 10px;
 }
 .portfolio__blocks .block img {
     width: 100%;
