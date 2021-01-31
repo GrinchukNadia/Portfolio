@@ -89,7 +89,10 @@ header .header__head {
     justify-content: space-between;
     font-size: 1.6rem;
 }
-
+.head_city{
+    display: flex;
+    align-items: center;
+}
 header .header__head .head_city p {
     font-size: 1.4rem;
 }
@@ -107,6 +110,13 @@ nav.navigation_menu {
 ul.header_menu-phone {
     display: -ms-flexbox;
     display: flex;
+}
+.content__name{
+    text-align: left;
+}
+.content__name a {
+    text-decoration: none;
+    color: #424242;
 }
 
 header .navigation_menu ul li {
@@ -127,14 +137,19 @@ header ul li:last-child {
 }
 
 header .header__content {
+    display: flex;
+    justify-content: space-between;
     text-align: center;
-    padding: 8rem 0;
+    padding: 6rem 0 4rem 0;
 }
 
 header .header__content h1, header .header__content p {
-    font-size: 6.4rem;
+    font-size: 2rem;
     text-transform: uppercase;
     font-weight: 400;
+}
+.header__content h1{
+    margin-top: -26px;
 }
 header .header__content h1{
     font-size: calc(40px + 24 * (100vw/1100));
@@ -154,18 +169,19 @@ header .header__content p {
 header .content__contact {
     display: -ms-flexbox;
     display: flex;
+    flex-direction: column;
     -ms-flex-pack: center;
     justify-content: center;
+    align-items: center;
 }
 
 header .content__contact a {
-    padding: 2rem 12rem 0 0rem;
+    padding: 0 2rem 0 0;
     text-decoration: none;
     color: #000000;
 }
 
 header .content__contact a:last-child {
-    padding: 2rem 0 0 8rem;
     text-transform: lowercase;
 }
 
@@ -190,8 +206,6 @@ header .header__footer .arrow__down {
 .container {
     max-width: 110rem;
     margin: 0 auto;
-    /* padding-left: 5rem; */
-    padding-right: 5rem;
 }
 
 .container_header {
@@ -260,17 +274,12 @@ main .slick-prev:before, main .slick-next:before {
 }
 
 main .cont {
-    background-color: #EEEEEE;
-    padding: 0 0 2rem 0;
+    background-color: #f5f5f5;
+    padding: 3rem 0 0rem 10rem;
 }
 
 main .aboutMe {
-    background: linear-gradient(90deg, #EEEEEE 51%, white 51%);
-}
-
-main .aboutMe__text {
-    padding: 24px 0px 0px 382px;
-    margin: 88px 0px 0px 0px;
+    background: linear-gradient(90deg, #f5f5f5 51%, white 51%);
 }
 
 main h2 {
@@ -286,26 +295,26 @@ main p {
     color: #464646;
 }
 
-main .main_photo {
-    height: 425px;
-    position: absolute;
+.main_photo {
+    height: 256px;
     top: -88.4px;
     margin-left: 3rem;
 }
 
-main .hard-skills .skills__header {
+.skills__header {
     text-align: center;
-    margin-top: 12.8rem;
+    margin-top: 2rem;
     margin-bottom: 1.3rem;
     font-size: 4rem;
+    text-transform: uppercase;
 }
 
 main .hard-skills .bckgr {
-    background: linear-gradient(90deg, white 51%, #EEEEEE 51%);
+    background: linear-gradient(90deg, white 51%, #f5f5f5 51%);
 }
 
 main .hard-skills .skills__main {
-    background-color: #EEEEEE;
+    background-color: #f5f5f5;
 }
 
 main .hard-skills .skills__main h3 {
@@ -318,92 +327,6 @@ main .hard-skills .skills__main p {
     color: #464646;
 }
 
-main .hard-skills .skills_graph {
-    display: -ms-flexbox;
-    display: flex;
-}
-
-main .hard-skills .skills_graph .skills_graph-block {
-    margin: 5rem 7rem 5rem 4rem;
-    width: 40%;
-}
-
-main .hard-skills .skills_graph .skills_graph-block .elem {
-    position: relative;
-    width: 100%;
-    padding: 0 0 1.3rem 0;
-    margin-bottom: 2.9rem;
-}
- .elem .progress_line{
-    display: block;
-    width: 100%;
-    height: 5px;
-    margin-top: 13px;
-    border-radius: 95px;
-    background-color: #424242;
-    
-}
-main .hard-skills .elem .progress {
-    position: absolute;
-    top: 37px;
-    left: 0;
-    width: 3%;
-    height: 5px;
-    background-color: #E5CC49;
-    transition: all 2s ease 0s;
-}
-main .hard-skills .elem .dot {
-    
-    position: absolute;
-    height: 12px;
-    width: 12px;
-    background: black;
-    border-radius: 50%;
-    left: 0;
-    top: 33.4px;
-    transition: all 2s ease 0s;
-    z-index: 2;
-    
-}
-main  .elem .eightyP#activAnimation{
-    width: 90%;
-}
-main .elem .eightyD#activAnimation{
-    left: 90%;
-}
-
-main  .elem .seventyP#activAnimation{
-    width: 75%;
-}
-main .elem .seventyD#activAnimation{
-    left: 75%;
-}
-
-main  .elem .sixtyP#activAnimation{
-    width: 55%;
-}
-main .elem .sixtyD#activAnimation{
-    left: 55%;
-}
-
-main  .elem .fiftyP#activAnimation{
-    width: 56%;
-}
-main .elem .fiftyD#activAnimation{
-    left: 56%;
-}
-main  .elem .thirtyP#activAnimation{
-    width: 32%;
-}
-main .elem .thirtyD#activAnimation{
-    left: 32%;
-}
-main  .elem .fortyP#activAnimation{
-    width: 42%;
-}
-main .elem .fortyD#activAnimation{
-    left: 42%;
-}
 main .skills__main {
     padding-left: 10rem;
     padding-top: 2.9rem;
@@ -420,33 +343,37 @@ main .skills__main p {
 }
 
 main .portfolio {
-    margin: 1.5rem 0 4.5rem;
-    background-color: #EEEEEE;
-    padding-bottom: 6rem;
+    background-color: #f5f5f5;
 }
 
 main .portfolio .portfolio__heading {
     text-align: center;
     font-size: 4rem;
-    padding: 4.3rem 0;
+    padding: 1rem 0 2rem 0;
 }
 
 main .portfolio__blocks {
     display: flex;
     flex-wrap: wrap;
-    justify-content: end;
+    justify-content: space-around;
+}
+.portfolio__blocks-item{
+    display: flex;
+    margin-bottom: 40px;
+}
+.portfolio__blocks-item:first-child{
+    margin-top: 40px;
 }
 
 main .portfolio__blocks .block {
-    width: 45%;
-    height: 29.6rem;
+    width: 40%;
+    height: 25.6rem;
     background-color: #A7A7A7;
     overflow: hidden;
     text-decoration: none;
     text-align: center;
     font-size: 20px;
     color: #fff;
-    margin-bottom: 10px;
 }
 .portfolio__blocks .block img {
     width: 100%;
@@ -456,13 +383,9 @@ main .portfolio__blocks .block {
 }
 .block img:hover{
     opacity: 1;
-    /* border: 1px solid #e4e4e4; */
 }
 .portfolio__blocks .block:hover{
     box-shadow: 2px 2px 8px 4px #e0e0e09f;
-}
-main .block:first-child {
-    margin-right: 10px;
 }
 
 main .cerificates__header {
@@ -543,19 +466,14 @@ main .certificates__carousel .carousel .carousel__img:last-child {
     }
 }
 @media all and (max-width: 768px){
-    main .hard-skills .skills_graph{
-        flex-direction: column;
-    }
-    main .hard-skills .skills_graph .skills_graph-block {
-        width: auto;
+    main .cont {
+        background-color: #f5f5f5;
+        padding: 3rem ;
     }
     main .main_photo{
         left: 0;
         right: 0;
         margin: 0 auto;
-    }
-    main .aboutMe__text{
-        padding: 35rem 6rem 1rem;
     }
     main .aboutMe__text h2, 
     main .aboutMe__text p{
@@ -591,67 +509,8 @@ main .certificates__carousel .carousel .carousel__img:last-child {
     footer .contacts{
         text-align: end;
     }
-    header .header_burger{
-        display: block;
-        position: relative;
-        right: 20px;
-        height: 18px;
-        width: 26px;
-        z-index: 4;
-        margin-right: -20px;
-        cursor: pointer;
-    }
-    .header_burger::before,
-    .header_burger::after{
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: #000000;
-        
-    }
-    .header_burger::before{
-        top: 0;
-        transition: all 0.3s ease 0s;
-    }
-    .header_burger::after{
-        bottom: 0;
-        transition: all 0.3s ease 0s;
-    }
-    .header_burger span{
-        width: 100%;
-        position: absolute;
-        height: 2px;
-        background-color: rgb(0, 0, 0);
-        margin-top: 8px; 
-        transition: all 0.3s ease 0s;
-    }
+    
 
-    .header_burger.active_burger::before{
-        transform: rotate(45deg);
-        top: 7px;
-    }
-    .header_burger.active_burger::after{
-        transform: rotate(-45deg);
-        top: 7px;
-    }
-    .header_burger.active_burger span{
-        transform: scale(0);
-    }
-
-    .header__navigation {
-        position: fixed;
-        left: 0;
-        top: -150%;
-        width: 100%;
-        height: 100%;
-        background-color: #E5CC49;
-        z-index: 2;
-        transition: all 0.6s ease 0s;
-    }
-    .header__navigation.active_burger{
-        top: 0;
-    }
     .header_menu-phone{
         flex-direction: column;
         margin-top: 6rem;
